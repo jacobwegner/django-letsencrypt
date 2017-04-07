@@ -15,7 +15,7 @@ limitations under the License.
 """
 
 from django.contrib import admin
-from django.utils.html import format_html
+from django.utils.html import mark_safe
 
 from .models import AcmeChallenge
 
@@ -28,7 +28,7 @@ class AcmeChallengeAdmin(admin.ModelAdmin):
         object_url = acme_object.get_acme_url()
 
         if object_url:
-            return format_html(
+            return mark_safe(
                 "<a href='{}'>ACME Challenge Link</a>",
                 object_url,
             )
