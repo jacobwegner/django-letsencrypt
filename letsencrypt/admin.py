@@ -29,8 +29,7 @@ class AcmeChallengeAdmin(admin.ModelAdmin):
 
         if object_url:
             return mark_safe(
-                "<a href='{}'>ACME Challenge Link</a>",
-                object_url,
+                "<a href='{}'>ACME Challenge Link</a>".format(object_url),
             )
 
         return '-'
